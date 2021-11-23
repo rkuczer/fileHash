@@ -4,6 +4,7 @@ i=ord(file_path[47])
 i+=1
 char=chr(i)
 print(char)
+for(i==0, )
 BLOCK_SIZE = 262144
 hash_handler = hashlib.sha512()
 file = open("hash.txt", "w")
