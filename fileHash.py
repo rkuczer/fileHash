@@ -16,3 +16,9 @@ for i in range(0, 21, 1):
 
     print(f"{file_path} file hash value: \n{file_hexhash}")
 file.close()
+
+file=open("hash.txt", "r")
+line1 = file.readline()
+#for line in line
+    #if line == master case
+        #print matching
