@@ -1,10 +1,12 @@
 import hashlib
-file_path = "C:/Users/ryan-/PycharmProjects/fileHash/files/f0.docx"
-i=ord(file_path[47])
-i+=1
-char=chr(i)
+file_path = "/Users/ryankuczer/PycharmProjects/fileHashReal/files/f0.docx"
+order=ord(file_path[54])
+order+=1
+char=chr(order)
 print(char)
-for(i==0, )
+for i in range(0, 20, 1):
+    order +=1
+    print(order)
 BLOCK_SIZE = 262144
 hash_handler = hashlib.sha512()
 file = open("hash.txt", "w")
