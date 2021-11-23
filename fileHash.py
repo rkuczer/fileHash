@@ -1,12 +1,12 @@
 import hashlib
 file_path = "/Users/ryankuczer/PycharmProjects/fileHashReal/files/f0.docx"
 order=ord(file_path[54])
-order+=1
 char=chr(order)
-print(char)
-for i in range(0, 20, 1):
-    order +=1
+for i in range(0, 21, 1):
     print(order)
+    char+=1
+    char = char(order)
+    print(type(order))
 
 BLOCK_SIZE = 262144
 hash_handler = hashlib.sha512()
