@@ -7,10 +7,11 @@ print(char)
 for i in range(0, 20, 1):
     order +=1
     print(order)
+
 BLOCK_SIZE = 262144
 hash_handler = hashlib.sha512()
 file = open("hash.txt", "w")
-
+#for loop here for everything else
 with open(file_path, 'rb') as f:
     fb = f.read(BLOCK_SIZE)
     while fb:
