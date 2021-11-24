@@ -13,10 +13,8 @@ for i in range(0, 21, 1):
             fb = f.read(BLOCK_SIZE)
     file_hexhash = hash_handler.hexdigest()
     file.write(file_hexhash+"\n")
-
     print(f"{file_path} file hash value: \n{file_hexhash}")
 file.close()
-
 file=open("hash.txt", "r")
 line1 = file.readline()
 Num = 0
