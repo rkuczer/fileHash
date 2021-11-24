@@ -19,6 +19,10 @@ file.close()
 
 file=open("hash.txt", "r")
 line1 = file.readline()
-#for line in line
-    #if line == master case
-        #print matching
+Num = 0
+for line in file:
+    if line == line1:
+        print("File matches original")
+    else:
+        print("File Number: " + str(Num) + ": Not matching")
+        Num = Num+1
