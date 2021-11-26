@@ -1,5 +1,5 @@
 import hashlib
-BLOCK_SIZE = 262144
+BLOCK_SIZE = 512*512
 hash_handler = hashlib.sha3_512()
 file = open("hash.txt", "w")
 
@@ -11,7 +11,7 @@ with open(file_path, 'rb') as f:
         hash_handler.update(fb)
         fb = f.read(BLOCK_SIZE)
 masterHash = hash_handler.hexdigest()
-print(f"{file_path} file hash value: \n{masterHash}\n")
+#print(f"Master hash is{file_path} file hash value: \n{masterHash}\n")
 
 #other folder values
 for i in range(1, 21, 1):
@@ -23,16 +23,19 @@ for i in range(1, 21, 1):
             fb = f.read(BLOCK_SIZE)
     file_hexhash = hash_handler.hexdigest()
     file.write(file_hexhash+"\n")
-    print(f"{file_path} file hash value: \n{file_hexhash}\n")
+    #print(f"{file_path} file hash value: \n{file_hexhash}\n")
 file.close()
 
-file1=open("hash.txt", "r")
+file1=open("hash.txt", "rb")
 
 Num = 0
-
-for line in file1:
-    if line == masterHash:
-        print("File matches original")
+myline = file1.readline()
+print("Master hash: " + masterHash +"\n")
+while myline:
+    print(myline)
+    if myline == masterHash:
+        print("THIS FILE MATCHEs")
     else:
-        print("File Number: " + str(Num) + ": Not matching")
-        Num = Num+1
+        print("No matching file")
+    myline = file1.readline()
+file1.close()
