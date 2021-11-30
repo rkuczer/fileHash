@@ -26,23 +26,17 @@ file.close()
 
 print("Master hash value: " + values[0] +"\n")
 line = 0
-i = 0
+i = 1
 while i < 20:
-
+    line = line +1
     if values[0] == values[i]:
         print("Found a matching file named f" + str(line) + ".docx")
         print(values[i])
         file1 = open("hash.txt", "a+")
+        file1.write("Matching file named: f" + str(line)+ ".docx\n" )
+        file1.close()
     i = i+1
-    line = line + 1
-file1.close()
 
-#while myline:
-#    print(myline)
-#    if myline == masterHash:
-#        print("THIS FILE MATCHES")
-#    else:
-#        print("No matching file")
-#    myline = file1.readline()
+
 
 
