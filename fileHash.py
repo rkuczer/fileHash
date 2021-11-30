@@ -28,13 +28,13 @@ print("Master hash value: " + values[0] +"\n")
 line = 0
 i = 0
 while i < 20:
-    line = line + 1
+
     if values[0] == values[i]:
         print("Found a matching file named f" + str(line) + ".docx")
         print(values[i])
         file1 = open("hash.txt", "a+")
     i = i+1
-
+    line = line + 1
 file1.close()
 
 #while myline:
