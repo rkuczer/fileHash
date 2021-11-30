@@ -1,7 +1,6 @@
-import hashlib
+import hashlib, sys
 BLOCK_SIZE = 512*512 #doubled blocked size from sha256
 hash_handler = hashlib.sha3_512()
-file = open("hash.txt", "w")
 
 #master hash value used to compare to examples in hash.txt
 file_path = "/Users/ryankuczer/PycharmProjects/fileHashReal/files/f0.docx" #file path with incrementing variable used to open file
@@ -11,7 +10,9 @@ with open(file_path, 'rb') as f:
         hash_handler.update(fb)
         fb = f.read(BLOCK_SIZE)
 masterHash = hash_handler.hexdigest()
-#print(f"Master hash is{file_path} file hash value: \n{masterHash}\n")
+#rint(f"Master hash is{file_path} file hash value: \n{masterHash}\n")
+
+file = open("hash.txt", "w")
 
 #for loop to find other values for f1-f20
 for i in range(1, 21, 1):
@@ -29,8 +30,9 @@ file.close()
 
 #open hash.txt and compare f0 to f1-f20
 file1=open("hash.txt", "rb")
-myline = file1.readline()
+myline = file1.readline(64)
 print("Master hash: " + masterHash +"\n")
+
 while myline:
     print(myline)
     if myline == masterHash:
@@ -38,4 +40,5 @@ while myline:
     else:
         print("No matching file")
     myline = file1.readline()
+
 file1.close()
